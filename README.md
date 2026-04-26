@@ -114,6 +114,6 @@ Pots **copiar, redistribuir, transformar i fer-ne ús**, fins i tot comercialmen
 
 **Jordi Quesada** — [`jordi.quesada@proton.me`](mailto:jordi.quesada@proton.me)
 
-GitHub: [@basesdedades360](https://github.com/basesdedades360/) · Repositori: [`basesdedades360`](https://github.com/basesdedades360/basededades360/)
+GitHub: [@basesdedades360](https://github.com/basesdedades360/) · Repositori: [`basesdedades360`](https://github.com/basesdedades360/basesdedades360/)
 
 > Si aquest material t'ha sigut útil, considera deixar una ⭐ al repositori. Ajuda a fer-lo visible a altres estudiants i docents.
