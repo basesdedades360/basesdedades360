@@ -1,6 +1,6 @@
 # Bases de Dades 360
 
-> *De zero a la consulta avançada — amb MySQL/MariaDB i PostgreSQL en paral·lel.*
+> *Del disseny a NoSQL*
 
 [![Llicència: CC BY-SA 4.0](https://img.shields.io/badge/Llic%C3%A8ncia-CC%20BY--SA%204.0-lightgrey.svg)](./LICENSE)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com/)
