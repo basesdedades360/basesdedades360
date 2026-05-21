@@ -1,27 +1,28 @@
 # Bases de Dades 360
 
-> *Del disseny a NoSQL*
+> *Del disseny al NoSQL — exercicis resolts en MySQL/MariaDB, PostgreSQL i MongoDB.*
 
 [![Llicència: CC BY-SA 4.0](https://img.shields.io/badge/Llic%C3%A8ncia-CC%20BY--SA%204.0-lightgrey.svg)](./LICENSE)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com/)
 [![MariaDB](https://img.shields.io/badge/MariaDB-10.5+-003545?logo=mariadb&logoColor=white)](https://mariadb.org/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-7.0+-47A248?logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 ![Idioma: català](https://img.shields.io/badge/idioma-catal%C3%A0-FFCD00)
 
-Aquest repositori conté els **scripts SQL, exercicis resolts i recursos complementaris** del llibre *Bases de Dades 360*, una introducció pràctica a les bases de dades relacionals en què cada tema es presenta en paral·lel per als dos SGBD més utilitzats del programari lliure: **MySQL/MariaDB** i **PostgreSQL**.
+Aquest repositori conté els **scripts SQL, scripts MongoDB, exercicis resolts i recursos complementaris** del llibre *Bases de Dades 360*. La característica distintiva del llibre — i d'aquest repositori — és que **cada exercici es presenta en paral·lel** per als dos SGBD relacionals més utilitzats del programari lliure (**MySQL/MariaDB** i **PostgreSQL**), i el capítol final introdueix també **MongoDB** com a referent del món NoSQL documental.
 
 ---
 
 ## 📑 Sobre el llibre
 
-*Bases de Dades 360* és un llibre adreçat a estudiants de cicles formatius i a qualsevol persona que vulgui aprendre bases de dades des de zero. La seva característica distintiva és que **cada exemple, cada exercici i cada explicació es presenta en les dues sintaxis** (MySQL/MariaDB i PostgreSQL), de manera que el lector adquireix competència real i no queda lligat a un únic sistema.
+*Bases de Dades 360* és un llibre adreçat a estudiants de cicles formatius i a qualsevol persona que vulgui aprendre bases de dades des de zero. Cobreix tot el cicle de vida d'una base de dades: disseny conceptual i lògic, normalització, SQL fonamental i avançat, optimització, transaccions, seguretat i una panoràmica del món NoSQL.
 
-Continguts dels blocs:
+Els blocs del llibre:
 
-- **Bloc I — Fonaments:** model relacional, normalització i disseny lògic.
-- **Bloc II — Disseny físic:** tipus de dades, restriccions, índexs i evolució d'esquemes.
-- **Bloc III — SQL pràctic:** DML, funcions, agregació, `JOIN`s, subconsultes, vistes.
-- **Bloc IV — Bases de dades en producció:** transaccions, usuaris i permisos, *backup* i restauració.
+- **Bloc I — Pensar abans de crear:** model E-R, model relacional, transformacions.
+- **Bloc II — Normalitzar per a durar:** formes normals i desnormalització.
+- **Bloc III — SQL: llegir, escriure i transformar:** disseny físic, DDL/DML, JOINs, optimització, SQL avançat, transaccions.
+- **Bloc IV — Més enllà del relacional:** seguretat, control d'accés, panoràmica NoSQL i projecte final integrador.
 
 ---
 
@@ -30,50 +31,112 @@ Continguts dels blocs:
 ```
 basesdedades360/
 ├── README.md                  ← aquest fitxer
-├── LICENSE
+├── LICENSE                    ← CC BY-SA 4.0
 ├── .gitignore
-├── capitol-05/                (en preparació)
-├── capitol-06/                ← scripts del capítol 6
+├── capitol-05/                ← Disseny físic i tipus de dades
 │   ├── README.md
-│   ├── institut_mysql.sql
-│   └── institut_postgresql.sql
-└── capitol-07/                (en preparació)
+│   ├── MySQL/
+│   └── PostgreSQL/
+├── capitol-06/                ← Fonaments de SQL: DDL i DML
+│   ├── README.md
+│   ├── MySQL/                 (esquema + dades + exercicis)
+│   └── PostgreSQL/
+├── capitol-07/                ← Agrupacions, JOINs i subconsultes
+├── capitol-08/                ← Optimització de consultes
+├── capitol-09/                ← Transaccions i concurrència
+├── capitol-10/                ← Vistes i diccionari de dades
+├── capitol-11/                ← Programació al SGBD (MySQL/MariaDB)
+│   └── MySQL/                 (capítol exclusivament MySQL/MariaDB)
+├── capitol-12/                ← Programació al SGBD (PL/pgSQL)
+│   └── PostgreSQL/            (capítol exclusivament PostgreSQL)
+├── capitol-13/                ← Control d'accés
+└── capitol-14/                ← Bases de dades no relacionals (MongoDB)
+    ├── README.md
+    └── MongoDB/               (capítol exclusivament MongoDB)
 ```
 
-| Capítol | Tema | Carpeta |
-|---|---|---|
-| 5 | Disseny físic i tipus de dades | _pendent_ |
-| 6 | Fonaments de SQL: DML i funcions integrades | [`capitol-06/`](./capitol-06/) |
-| 7 | `JOIN`s i subconsultes | _pendent_ |
+> ℹ️ Els **capítols 11 i 12** són dues versions del mateix tema (*Programació al SGBD*): el 11 amb MySQL/MariaDB i el 12 amb PostgreSQL (PL/pgSQL). Cada lector pot fer servir el que correspongui al seu motor.
+
+---
+
+## 📚 Índex de capítols
+
+| Capítol | Tema | Carpeta | MySQL | PostgreSQL | MongoDB |
+|---|---|---|:-:|:-:|:-:|
+| 5 | Disseny físic i tipus de dades | [`capitol-05/`](./capitol-05/) | ✅ | ✅ | – |
+| 6 | Fonaments de SQL: DDL i DML | [`capitol-06/`](./capitol-06/) | ✅ | ✅ | – |
+| 7 | Agrupacions, JOINs i subconsultes | [`capitol-07/`](./capitol-07/) | ✅ | ✅ | – |
+| 8 | Optimització de consultes | [`capitol-08/`](./capitol-08/) | ✅ | ✅ | – |
+| 9 | Transaccions i concurrència | [`capitol-09/`](./capitol-09/) | ✅ | ✅ | – |
+| 10 | Vistes i diccionari de dades | [`capitol-10/`](./capitol-10/) | ✅ | ✅ | – |
+| 11 | Programació al SGBD (MySQL/MariaDB) | [`capitol-11/`](./capitol-11/) | ✅ | – | – |
+| 12 | Programació al SGBD (PL/pgSQL) | [`capitol-12/`](./capitol-12/) | – | ✅ | – |
+| 13 | Control d'accés | [`capitol-13/`](./capitol-13/) | ✅ | ✅ | – |
+| 14 | Bases de dades no relacionals (MongoDB) | [`capitol-14/`](./capitol-14/) | – | – | ✅ |
+
+> Llegenda: ✅ exercicis complets · – no aplicable al SGBD
 
 ---
 
 ## 🚀 Com usar els scripts
 
-Cada capítol conté un parell de fitxers SQL paral·lels (un per a MySQL/MariaDB i un altre per a PostgreSQL). Pots executar-los de tres maneres:
+Cada capítol conté el seu propi README amb instruccions específiques. La pauta general:
 
 ### Opció 1 — Online (sense instal·lar res)
 
-La manera més ràpida de provar els scripts és amb un *playground* en línia. La més recomanada per al llibre és **DB Fiddle**:
+La manera més ràpida de provar els scripts és amb un *playground* en línia:
 
 - [DB Fiddle (MySQL 8.0)](https://www.db-fiddle.com/?rdbms=mysql_8.0)
 - [DB Fiddle (PostgreSQL 15)](https://www.db-fiddle.com/?rdbms=postgres_15)
 
-Copia el contingut del fitxer `.sql` corresponent al panell esquerre i prem **Run**.
+Copia el contingut del fitxer `.sql` al panell esquerre i prem **Run**.
 
 ### Opció 2 — Localment amb el client de línia d'ordres
 
 ```bash
 # MySQL / MariaDB
-mysql -u root -p < capitol-06/institut_mysql.sql
+mysql -u root -p < capitol-06/MySQL/01_institut_mysql.sql
 
 # PostgreSQL
-psql -U postgres -f capitol-06/institut_postgresql.sql
+psql -U postgres -f capitol-06/PostgreSQL/01_institut_postgresql.sql
 ```
 
 ### Opció 3 — Amb una eina gràfica
 
 Obre el fitxer `.sql` amb el teu client habitual (DBeaver, MySQL Workbench, pgAdmin, HeidiSQL, TablePlus...) i executa l'script complet.
+
+### Opció 4 — MongoDB (capítol 14)
+
+Per als scripts del capítol 14, cal `mongosh` (la consola oficial de MongoDB):
+
+```bash
+cd capitol-14/MongoDB
+mongosh
+```
+
+I, des de la consola:
+
+```javascript
+load("01_institut_mongodb.js")
+use institut
+load("exercici_14_1_crud_i_consultes_basiques.js")
+```
+
+També es pot fer servir **MongoDB Compass** (interfície gràfica) o **MongoDB Atlas** (servei al núvol, capa gratuïta).
+
+---
+
+## 🗄️ Base de dades de referència: `institut`
+
+La majoria dels exercicis a partir del capítol 6 treballen sobre una base de dades de gestió acadèmica anomenada **`institut`**, amb diferents taules.
+
+
+Per executar qualsevol exercici dels capítols 7 endavant, cal haver carregat prèviament:
+
+1. `capitol-06/<SGBD>/01_institut_<sgbd>.sql` (esquema)
+2. `capitol-06/<SGBD>/02_institut_inserts_<sgbd>.sql` (dades de prova)
+
+> 📌 Al **capítol 14** hi ha una versió MongoDB de la mateixa base de dades a `capitol-14/MongoDB/01_institut_mongodb.js`. Manté els mateixos identificadors per facilitar la comparació amb la versió SQL.
 
 ---
 
@@ -81,21 +144,23 @@ Obre el fitxer `.sql` amb el teu client habitual (DBeaver, MySQL Workbench, pgAd
 
 | Requisit | Versió mínima recomanada |
 |---|---|
-| MySQL | 8.0 (per a `CHECK` natiu i `JSON`) |
+| MySQL | 8.0 (per a `CHECK` natiu, `JSON` i finestres) |
 | MariaDB | 10.5 |
-| PostgreSQL | 13 (la 15 o superior preferida) |
+| PostgreSQL | 13 (recomanada 15 o superior) |
+| MongoDB | 6.0 (recomanada 7.0 o superior) |
+| mongosh | 1.10 |
 
-Els scripts utilitzen característiques modernes (`GENERATED ALWAYS AS IDENTITY` a PostgreSQL, `CHECK` aplicat realment a MySQL 8.0+...). En versions anteriors poden necessitar petits ajustos.
+Els scripts SQL utilitzen característiques modernes (`GENERATED ALWAYS AS IDENTITY`, `CHECK` natiu, funcions de finestra...). En versions anteriors poden necessitar petits ajustos.
 
 ---
 
 ## 🤝 Com contribuir
 
-Aquest repositori és principalment un complement al llibre, però són benvingudes:
+Aquest repositori és principalment un complement al llibre. Són benvingudes:
 
 - **Correccions de bugs** als scripts (obre una *issue* o un *pull request*).
 - **Errates** detectades al text del llibre, indicant capítol i pàgina.
-- **Traduccions** dels scripts a altres llengües (cal mantenir la versió original en català).
+- **Versions alternatives en MongoDB** del capítol 14 amb un disseny idiomàtic (documents incrustats).
 
 ---
 
@@ -114,6 +179,6 @@ Pots **copiar, redistribuir, transformar i fer-ne ús**, fins i tot comercialmen
 
 **Jordi Quesada** — [`jordi.quesada@proton.me`](mailto:jordi.quesada@proton.me)
 
-GitHub: [@basesdedades360](https://github.com/basesdedades360/) · Repositori: [`basesdedades360`](https://github.com/basesdedades360/basesdedades360/)
+GitHub: [@basesdedades360](https://github.com/basesdedades360/) · Repositori: [`basesdedades360`](https://github.com/basesdedades360/basededades360/)
 
 > Si aquest material t'ha sigut útil, considera deixar una ⭐ al repositori. Ajuda a fer-lo visible a altres estudiants i docents.
