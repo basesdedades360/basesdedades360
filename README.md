@@ -17,12 +17,7 @@ Aquest repositori conté els **scripts SQL, scripts MongoDB, exercicis resolts i
 
 *Bases de Dades 360* és un llibre adreçat a estudiants de cicles formatius i a qualsevol persona que vulgui aprendre bases de dades des de zero. Cobreix tot el cicle de vida d'una base de dades: disseny conceptual i lògic, normalització, SQL fonamental i avançat, optimització, transaccions, seguretat i una panoràmica del món NoSQL.
 
-Els blocs del llibre:
 
-- **Bloc I — Pensar abans de crear:** model E-R, model relacional, transformacions.
-- **Bloc II — Normalitzar per a durar:** formes normals i desnormalització.
-- **Bloc III — SQL: llegir, escriure i transformar:** disseny físic, DDL/DML, JOINs, optimització, SQL avançat, transaccions.
-- **Bloc IV — Més enllà del relacional:** seguretat, control d'accés, panoràmica NoSQL i projecte final integrador.
 
 ---
 
