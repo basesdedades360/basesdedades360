@@ -2,26 +2,25 @@
 -- Refactor amb conversió de tipus de dades
 -- Sintaxi: MySQL / MariaDB
 
--- MySQL / MariaDB
+
 CREATE TABLE historic_temperatura (
     id_lectura  BIGINT      PRIMARY KEY AUTO_INCREMENT,
-    id_sensor   VARCHAR(10) NOT NULL,           -- "S00001", "S00002"...
-    temperatura VARCHAR(10) NOT NULL,           -- "23.5", " 21.0 ", "-3.2", ""
-    correcta    CHAR(1)     NOT NULL DEFAULT 'S',  -- 'S' o 'N'
-    `timestamp` VARCHAR(20) NOT NULL            -- "2024-03-15 14:30:00"
+    id_sensor   VARCHAR(10) NOT NULL,          
+    temperatura VARCHAR(10) NOT NULL,
+    correcta    CHAR(1)     NOT NULL DEFAULT 'S',
+    `timestamp` VARCHAR(20) NOT NULL
 );
 
--- --- Bloc següent ---
 
--- 1. id_sensor: primer netejar amb UPDATE, després canviar el tipus
+
+-- 1
 UPDATE historic_temperatura
     SET id_sensor = SUBSTRING(id_sensor, 2);
 
 ALTER TABLE historic_temperatura
     MODIFY COLUMN id_sensor INT NOT NULL;
--- MySQL casteja "00001" → 1 implícitament
 
--- 2. temperatura: TRIM, treure NOT NULL, mapar buides a NULL, canviar tipus
+-- 2
 UPDATE historic_temperatura
     SET temperatura = TRIM(temperatura);
 
@@ -35,7 +34,7 @@ UPDATE historic_temperatura
 ALTER TABLE historic_temperatura
     MODIFY COLUMN temperatura DECIMAL(5,2) NULL;
 
--- 3. correcta: patró "afegir-copiar-substituir"
+-- 3
 ALTER TABLE historic_temperatura
     ADD COLUMN correcta_bool BOOLEAN NOT NULL DEFAULT TRUE;
 
@@ -48,7 +47,6 @@ ALTER TABLE historic_temperatura
 ALTER TABLE historic_temperatura
     CHANGE COLUMN correcta_bool correcta BOOLEAN NOT NULL DEFAULT TRUE;
 
--- 4. `timestamp` → data_lectura amb canvi de tipus
+-- 4
 ALTER TABLE historic_temperatura
     CHANGE COLUMN `timestamp` data_lectura TIMESTAMP NOT NULL;
--- Els valors "2024-03-15 14:30:00" són convertibles directament a TIMESTAMP
