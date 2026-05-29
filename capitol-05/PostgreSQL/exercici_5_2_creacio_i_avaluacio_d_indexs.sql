@@ -2,8 +2,6 @@
 -- Creació i avaluació d'índexs
 -- Sintaxi: PostgreSQL
 
--- PostgreSQL
-
 CREATE TYPE estat_comanda_t AS ENUM ('pendent','enviada','lliurada','cancel·lada');
 
 CREATE TABLE comanda (
@@ -15,24 +13,18 @@ CREATE TABLE comanda (
   total        NUMERIC(10,2)   NOT NULL
 );
 
--- --- Bloc següent ---
+-- ---------------------------------------------------------------------------------
 
--- PostgreSQL
-
--- IMPORTANT: a PostgreSQL, la FK sobre id_client NO crea índex automàticament.
--- L'índex compost (id_client, data_comanda) ja cobreix aquest cas.
-
--- Consulta 1
+-- 1
 CREATE INDEX idx_comanda_client_data ON comanda(id_client, data_comanda DESC);
 
--- Consulta 2: aprofitem un índex PARCIAL (només files amb estat='pendent')
--- Això és una optimització exclusiva de PostgreSQL:
+-- 2
 CREATE INDEX idx_comanda_pendents ON comanda(data_comanda)
   WHERE estat = 'pendent';
--- Alternativa "clàssica" compatible:
+-- O una altra possibilitat:
 -- CREATE INDEX idx_comanda_estat_data ON comanda(estat, data_comanda);
 
--- Consulta 3: cerques per rang
+-- 3
 CREATE INDEX idx_comanda_total ON comanda(total);
 
 -- Consulta 4: ja cobert per UNIQUE de referencia.
