@@ -2,7 +2,6 @@
 -- Evolució d'un esquema en producció
 -- Sintaxi: MySQL / MariaDB
 
--- MySQL / MariaDB
 CREATE TABLE client (
     id_client  INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     nom        VARCHAR(50)  NOT NULL,
@@ -13,11 +12,9 @@ CREATE TABLE client (
     data_alta  DATE         NOT NULL DEFAULT (CURRENT_DATE)
 );
 
--- --- Bloc següent ---
 
--- MySQL / MariaDB
 
--- 1. Ampliar nom — atenció: MODIFY exigeix repetir NOT NULL!
+-- 1
 ALTER TABLE client
     MODIFY COLUMN nom VARCHAR(80) NOT NULL;
 
