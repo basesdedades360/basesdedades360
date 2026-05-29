@@ -27,14 +27,12 @@ CREATE INDEX idx_comanda_pendents ON comanda(data_comanda)
 -- 3
 CREATE INDEX idx_comanda_total ON comanda(total);
 
--- Consulta 4: ja cobert per UNIQUE de referencia.
+--  4: No cal fer res. Ja està cobert per la restricció UNIQUE de l'atribut referencia.
 
--- --- Bloc següent ---
-
--- PostgreSQL
+-- ---------------------------------------------------------------------------------
 
 EXPLAIN ANALYZE SELECT id_comanda, data_comanda, total
 FROM comanda
 WHERE id_client = 1234
 ORDER BY data_comanda DESC;
--- Esperat: Index Scan using idx_comanda_client_data on comanda
+
