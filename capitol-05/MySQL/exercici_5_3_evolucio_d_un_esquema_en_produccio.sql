@@ -25,20 +25,18 @@ ALTER TABLE client
 -- 3
 ALTER TABLE client
     RENAME COLUMN adreca TO adreca_postal;
--- Versió clàssica equivalent (cal repetir el tipus):
--- ALTER TABLE client CHANGE COLUMN adreca adreca_postal VARCHAR(150);
 
--- 4. Afegir actiu (els registres existents reben TRUE automàticament)
+-- 4
 ALTER TABLE client
     ADD COLUMN actiu BOOLEAN NOT NULL DEFAULT TRUE;
 
--- 5. Afegir tipus_client + CHECK amb nom (dues operacions, un sol ALTER)
+-- 5
 ALTER TABLE client
     ADD COLUMN tipus_client VARCHAR(20) NOT NULL DEFAULT 'particular',
     ADD CONSTRAINT chk_tipus_client
         CHECK (tipus_client IN ('particular','autonom','empresa'));
 
--- 6. Crear taula pais i afegir la FK a client
+-- 6
 CREATE TABLE pais (
     codi_pais CHAR(2)     PRIMARY KEY,
     nom_pais  VARCHAR(60) NOT NULL
@@ -49,7 +47,7 @@ ALTER TABLE client
     ADD CONSTRAINT fk_client_pais
         FOREIGN KEY (codi_pais) REFERENCES pais(codi_pais);
 
--- 7. CHECK de format d'email
+-- 7
 ALTER TABLE client
     ADD CONSTRAINT chk_client_email_format
         CHECK (email IS NULL OR email LIKE '%@%');
