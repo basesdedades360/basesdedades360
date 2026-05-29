@@ -24,7 +24,7 @@ CREATE INDEX idx_comanda_estat_data ON comanda(estat, data_comanda);
 CREATE INDEX idx_comanda_total ON comanda(total);
 
 --  4
---   No cal crear-ne un de nou. Ja està cobert per l'índex UNIQUE creat automàticament amb la restricció UNIQUE.
+--   No cal crear-ne un de nou. Ja està cobert per l'índex UNIQUE creat amb la restricció UNIQUE.
 
 
 -- ---------------------------------------------------------------------------------
