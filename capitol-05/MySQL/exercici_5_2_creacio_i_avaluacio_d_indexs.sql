@@ -13,22 +13,21 @@ CREATE TABLE comanda (
   FOREIGN KEY (id_client) REFERENCES client(id_client)
 );
 
---
-
--- Consulta 1
+---- ---------------------------------------------------------------------------------
+--  1
 CREATE INDEX idx_comanda_client_data ON comanda(id_client, data_comanda DESC);
 
---  Consulta 2
+-- 2
 CREATE INDEX idx_comanda_estat_data ON comanda(estat, data_comanda);
 
--- Consulta 3
+-- 3
 CREATE INDEX idx_comanda_total ON comanda(total);
 
--- Consulta 4: referencia exacta
+--  4
 --   No cal crear-ne un de nou. Ja està cobert per l'índex UNIQUE creat automàticament amb la restricció UNIQUE.
 
 
--- 
+-- ---------------------------------------------------------------------------------
 
 EXPLAIN SELECT id_comanda, data_comanda, total
 FROM comanda
