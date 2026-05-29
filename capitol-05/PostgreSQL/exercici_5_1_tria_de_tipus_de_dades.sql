@@ -22,8 +22,8 @@ CREATE TABLE producte (
   CONSTRAINT chk_marges CHECK (preu_venda >= preu_cost)
 );
 
--- Els veurem al capítol 10, així que encara no els coneixes. No et preocupis i no facis cas
--- Afegeixo com es faria per emular ON UPDATE CURRENT_TIMESTAMP amb un trigger
+-- Els veurem al capítol 10, així que encara no els coneixes. No et preocupis si ara no ho entens i no facis cas del codi que poso a continuació
+-- Afegeixo com es faria per emular ON UPDATE CURRENT_TIMESTAMP amb un trigger simplement per tenir el codi complet.
 CREATE OR REPLACE FUNCTION fn_producte_touch()
 RETURNS TRIGGER AS $$
 BEGIN
