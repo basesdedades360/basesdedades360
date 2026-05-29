@@ -18,11 +18,11 @@ CREATE TABLE client (
 ALTER TABLE client
     MODIFY COLUMN nom VARCHAR(80) NOT NULL;
 
--- 2. Fer cognoms opcional
+-- 2
 ALTER TABLE client
     MODIFY COLUMN cognoms VARCHAR(80) NULL;
 
--- 3. Renombrar adreca → adreca_postal (MySQL ≥ 8.0)
+-- 3
 ALTER TABLE client
     RENAME COLUMN adreca TO adreca_postal;
 -- Versió clàssica equivalent (cal repetir el tipus):
