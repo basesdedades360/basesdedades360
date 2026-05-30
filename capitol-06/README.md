@@ -24,7 +24,7 @@ capitol-06/
     ├── 01_institut_postgresql.sql         ← esquema (DDL)
     ├── 02_institut_inserts_postgresql.sql ← dades de prova (DML)
     ├── exercici_6_1_consultes_dml_basiques.sql
-    ├── exercici_6_2_filtratge_i_agregacio_avancada.sql
+    ├── exercici_6_2_filtratge.sql
     ├── exercici_6_3_funcions_integrades_en_una_sola_con.sql
     ├── exercici_6_4_estadistiques_de_notes_amb_funcions.sql
     ├── exercici_6_5_validacio_i_extraccio_amb_expressio.sql
