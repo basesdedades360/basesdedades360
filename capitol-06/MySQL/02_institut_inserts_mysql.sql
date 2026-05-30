@@ -1,27 +1,9 @@
 -- ============================================================
 --  INSERCIÓ DE DADES DE PROVA — base de dades 'institut'
---  Compatible amb MySQL / MariaDB
---
---  Aquest fitxer omple les taules creades per institut_mysql.sql
---  amb dades pensades per practicar:
---    · JOINs (INNER, LEFT, RIGHT)
---    · Subconsultes (correlacionades i no correlacionades)
---    · Agrupacions (GROUP BY) i agregacions (COUNT, AVG, SUM, MAX, MIN)
---    · Filtres amb HAVING, IN, BETWEEN, LIKE, IS NULL...
---    · Funcions de data, text i nombre
---
---  Punts deliberadament inclosos per fer pràctiques riques:
---    · Professors actius i inactius (columna 'actiu')
---    · Salaris i dates d'alta variats per departament
---    · Un mòdul sense professor assignat (id_prof = NULL) → LEFT JOIN
---    · Alumnes sense cap matrícula → LEFT JOIN / NOT EXISTS / NOT IN
---    · Mòduls sense matriculacions → consultes "buides"
---    · Notes NULL (avaluació pendent), suspesos amb 2a i 3a convocatòria
 -- ============================================================
 
 USE institut;
 
--- Neteja prèvia per poder reexecutar l'script sense errors.
 SET FOREIGN_KEY_CHECKS = 0;
 TRUNCATE TABLE matricula;
 TRUNCATE TABLE modul;
@@ -34,13 +16,13 @@ SET FOREIGN_KEY_CHECKS = 1;
 --  DEPARTAMENTS
 -- ------------------------------------------------------------
 INSERT INTO departament (id_dept, nom_dept, edifici) VALUES
-    (1, 'Informàtica',         'Edifici A'),
-    (2, 'Disseny',              'Edifici B'),
-    (3, 'Anglès',               'Edifici A'),
-    (4, 'Orientació Laboral',   'Edifici C'),
-    (5, 'Sanitat',              'Edifici D'),
-    (6, 'Administració',        'Edifici C'),
-    (7, 'Electrònica',          'Edifici A');
+    (1, 'Informàtica','Edifici A'),
+    (2, 'Disseny', 'Edifici B'),
+    (3, 'Anglès', 'Edifici A'),
+    (4, 'Orientació Laboral', 'Edifici C'),
+    (5, 'Sanitat', 'Edifici D'),
+    (6, 'Administració', 'Edifici C'),
+    (7, 'Electrònica', 'Edifici A');
 
 -- ------------------------------------------------------------
 --  PROFESSORS
@@ -49,35 +31,34 @@ INSERT INTO departament (id_dept, nom_dept, edifici) VALUES
 --  Dates d'alta entre 2009 i 2021.
 --  Dos professors inactius: Eva Romero (Informàtica) i Laia Puig (Sanitat).
 INSERT INTO professor (id_prof, nom, cognoms, email, telefon, salari, data_alta, actiu, id_dept) VALUES
-    ( 1, 'Héctor', 'Maeso',   'hmaeso@institut.cat',   '600111222', 2950.00, '2010-09-01', TRUE,  1),
-    ( 2, 'Marta',  'Soler',   'msoler@institut.cat',   '600222333', 2700.50, '2015-09-01', TRUE,  1),
-    ( 3, 'Jordi',  'Vila',    'jvila@institut.cat',    '600333444', 2450.00, '2018-09-01', TRUE,  1),
-    ( 4, 'Eva',    'Romero',  'eromero@institut.cat',  '600444555', 2600.00, '2012-09-01', FALSE, 1),
-    ( 5, 'Dori',   'Garcia',  'dgarcia@institut.cat',  '600555666', 2800.00, '2011-09-01', TRUE,  2),
-    ( 6, 'Anna',   'Martí',   'amarti@institut.cat',   '600666777', 2300.00, '2020-09-01', TRUE,  2),
-    ( 7, 'Ramón',  'Redondo', 'rredondo@institut.cat', '600777888', 2550.00, '2014-09-01', TRUE,  3),
-    ( 8, 'Sergi',  'Mas',     'smas@institut.cat',     '600888999', 2200.00, '2021-09-01', TRUE,  3),
-    ( 9, 'Isabel', 'Garcia',  'igarcia@institut.cat',  '600999000', 2750.00, '2013-09-01', TRUE,  4),
-    (10, 'Pere',   'Roca',    'proca@institut.cat',    '601111222', 2900.00, '2009-09-01', TRUE,  5),
-    (11, 'Laia',   'Puig',    'lpuig@institut.cat',    '601222333', 2400.00, '2019-09-01', FALSE, 5),
-    (12, 'Núria',  'Camps',   'ncamps@institut.cat',   '601333444', 2650.00, '2016-09-01', TRUE,  6),
-    (13, 'Carles', 'Bosch',   'cbosch@institut.cat',   '601444555', 2850.00, '2012-09-01', TRUE,  7);
+    ( 1, 'Héctor', 'Maeso', 'hmaeso@institut.cat', '600111222', 2950.00, '2010-09-01', TRUE,  1),
+    ( 2, 'Marta', 'Soler', 'msoler@institut.cat', '600222333', 2700.50, '2015-09-01', TRUE,  1),
+    ( 3, 'Jordi', 'Vila', 'jvila@institut.cat', '600333444', 2450.00, '2018-09-01', TRUE,  1),
+    ( 4, 'Eva', 'Romero', 'eromero@institut.cat',  '600444555', 2600.00, '2012-09-01', FALSE, 1),
+    ( 5, 'Dori', 'Garcia', 'dgarcia@institut.cat',  '600555666', 2800.00, '2011-09-01', TRUE,  2),
+    ( 6, 'Anna', 'Martí', 'amarti@institut.cat',   '600666777', 2300.00, '2020-09-01', TRUE,  2),
+    ( 7, 'Ramón', 'Redondo', 'rredondo@institut.cat', '600777888', 2550.00, '2014-09-01', TRUE,  3),
+    ( 8, 'Sergi', 'Mas', 'smas@institut.cat',     '600888999', 2200.00, '2021-09-01', TRUE,  3),
+    ( 9, 'Isabel', 'Garcia', 'igarcia@institut.cat',  '600999000', 2750.00, '2013-09-01', TRUE,  4),
+    (10, 'Pere', 'Roca', 'proca@institut.cat',    '601111222', 2900.00, '2009-09-01', TRUE,  5),
+    (11, 'Laia', 'Puig', 'lpuig@institut.cat',    '601222333', 2400.00, '2019-09-01', FALSE, 5),
+    (12, 'Núria', 'Camps', 'ncamps@institut.cat',   '601333444', 2650.00, '2016-09-01', TRUE,  6),
+    (13, 'Carles', 'Bosch', 'cbosch@institut.cat',   '601444555', 2850.00, '2012-09-01', TRUE,  7);
 
 -- ------------------------------------------------------------
 --  ALUMNES
 -- ------------------------------------------------------------
---  Cursos d'inici entre 2022 i 2025. Alguns alumnes sense telèfon.
---  Quim i Adriana (ids 19 i 20) NO tenen cap matrícula a propòsit.
+
 INSERT INTO alumne (id_alumne, nom, cognoms, email, data_naix, telefon, curs_inici) VALUES
-    ( 1, 'Marc',    'Puig Vidal',  'marcpv@alumnes.cat',    '2005-03-12', '610111111', 2024),
-    ( 2, 'Laia',    'Solé Mas',    'laiasm@alumnes.cat',    '2004-07-22', '610222222', 2023),
-    ( 3, 'Pol',     'Riera Bosch', 'polrb@alumnes.cat',     '2005-11-05', '610333333', 2024),
-    ( 4, 'Júlia',   'Font Casas',  'juliafc@alumnes.cat',   '2003-02-18', '610444444', 2023),
-    ( 5, 'Aleix',   'Roca Vila',   'aleixrv@alumnes.cat',   '2005-09-30', NULL,        2024),
-    ( 6, 'Berta',   'Camps Tort',  'bertact@alumnes.cat',   '2004-05-14', '610666666', 2023),
-    ( 7, 'Nil',     'Bosch Soler', 'nilbs@alumnes.cat',     '2006-01-08', '610777777', 2025),
-    ( 8, 'Clara',   'Vidal Puig',  'claravp@alumnes.cat',   '2005-04-25', '610888888', 2024),
-    ( 9, 'Arnau',   'Mas Riera',   'arnaumr@alumnes.cat',   '2004-10-11', '610999999', 2023),
+    ( 1, 'Marc', 'Puig Vidal',  'marcpv@alumnes.cat',    '2005-03-12', '610111111', 2024),
+    ( 2, 'Laia', 'Solé Mas',    'laiasm@alumnes.cat',    '2004-07-22', '610222222', 2023),
+    ( 3, 'Pol', 'Riera Bosch', 'polrb@alumnes.cat',     '2005-11-05', '610333333', 2024),
+    ( 4, 'Júlia', 'Font Casas',  'juliafc@alumnes.cat',   '2003-02-18', '610444444', 2023),
+    ( 5, 'Aleix', 'Roca Vila',   'aleixrv@alumnes.cat',   '2005-09-30', NULL,        2024),
+    ( 6, 'Berta', 'Camps Tort',  'bertact@alumnes.cat',   '2004-05-14', '610666666', 2023),
+    ( 7, 'Nil', 'Bosch Soler', 'nilbs@alumnes.cat',     '2006-01-08', '610777777', 2025),
+    ( 8, 'Clara', 'Vidal Puig',  'claravp@alumnes.cat',   '2005-04-25', '610888888', 2024),
+    ( 9, 'Arnau', 'Mas Riera',   'arnaumr@alumnes.cat',   '2004-10-11', '610999999', 2023),
     (10, 'Maria',   'Tort Font',   'mariatf@alumnes.cat',   '2005-06-19', '611000000', 2024),
     (11, 'Èlia',    'Soler Camps', 'eliasc@alumnes.cat',    '2006-03-03', '611111111', 2025),
     (12, 'Roger',   'Garcia Roca', 'rogergr@alumnes.cat',   '2003-12-27', '611222222', 2022),
