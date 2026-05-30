@@ -1,18 +1,11 @@
 -- Exercici resolt 6.3
--- Funcions integrades en una sola consulta
--- Sintaxi: MySQL / MariaDB
-
+-- MySQL / MariaDB
 SELECT
-    UPPER(CONCAT(nom, ' ', cognoms))                                   AS nom_complet,
-    CONCAT(LEFT(nom, 1), '. ', UPPER(cognoms))                         AS inicial_cognom,
-    CHAR_LENGTH(email)                                                 AS llargada_email,
-    SUBSTRING(email, INSTR(email, '@') + 1)                            AS domini,
-    TIMESTAMPDIFF(YEAR, data_naix, CURDATE())                          AS edat,
-    DATE_FORMAT(data_naix, '%d/%m/%Y')                                 AS data_naix_local,
-    CASE
-        WHEN TIMESTAMPDIFF(YEAR, data_naix, CURDATE()) >= 18 THEN 'Major'
-        ELSE                                                       'Menor'
-    END                                                                 AS estat_civil
-FROM alumne
-WHERE data_naix IS NOT NULL
-ORDER BY edat DESC;
+    CONCAT(nom, ' ', cognoms)              AS nom_complet,
+    email,
+    email REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$'     AS email_valid,
+    REGEXP_SUBSTR(email, '[^@]+$')         AS domini,
+    REGEXP_REPLACE(telefon, '[^0-9]', '')  AS telefon_net,
+    telefon REGEXP '^[67][0-9]{8}$'        AS mobil_es
+FROM   professor
+ORDER BY cognoms, nom;
