@@ -1,5 +1,5 @@
 -- Exercici resolt 6.2
--- Filtratge i agregació avançada
+-- Filtratge 
 -- Sintaxi: MySQL / MariaDB
 
 INSERT INTO alumne (nom, cognoms, email, data_naix, curs_inici) VALUES
@@ -42,12 +42,7 @@ SELECT
 FROM alumne
 WHERE data_naix IS NOT NULL;
 
--- 3 versió PostgreSQL
-SELECT
-  UPPER(nom || ' ' || cognoms)                       AS nom_complet,
-  EXTRACT(YEAR FROM AGE(CURRENT_DATE, data_naix))    AS edat
-FROM alumne
-WHERE data_naix IS NOT NULL;
+
 
 -- 4
 SELECT codi, nom_modul, hores
