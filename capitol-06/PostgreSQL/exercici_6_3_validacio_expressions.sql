@@ -9,3 +9,4 @@ SELECT
     telefon ~ '^[67][0-9]{8}$'                  AS mobil_es
 FROM   professor
 ORDER BY cognoms, nom;
+ 
