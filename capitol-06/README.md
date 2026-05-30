@@ -135,11 +135,11 @@ Hauries de veure les 5 taules: `alumne`, `departament`, `matricula`, `modul`, `p
 Per comprovar que els inserts s'han executat correctament:
 
 ```sql
-SELECT 'departament' AS taula, COUNT(*) FROM departament
-UNION ALL SELECT 'professor',  COUNT(*) FROM professor
-UNION ALL SELECT 'alumne',     COUNT(*) FROM alumne
-UNION ALL SELECT 'modul',      COUNT(*) FROM modul
-UNION ALL SELECT 'matricula',  COUNT(*) FROM matricula;
+SELECT COUNT(*) FROM departament;
+SELECT COUNT(*) FROM professor;
+SELECT COUNT(*) FROM alumne;
+SELECT COUNT(*) FROM modul;
+SELECT COUNT(*) FROM matricula;
 ```
 
 El resultat esperat és: 7 departaments, 13 professors, 20 alumnes, 20 mòduls i 58 matrícules.
