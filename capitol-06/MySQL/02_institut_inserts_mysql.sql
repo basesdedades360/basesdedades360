@@ -27,9 +27,7 @@ INSERT INTO departament (id_dept, nom_dept, edifici) VALUES
 -- ------------------------------------------------------------
 --  PROFESSORS
 -- ------------------------------------------------------------
---  Salaris entre 2200 i 2950 € (variació per fer mitjanes/màxims).
---  Dates d'alta entre 2009 i 2021.
---  Dos professors inactius: Eva Romero (Informàtica) i Laia Puig (Sanitat).
+
 INSERT INTO professor (id_prof, nom, cognoms, email, telefon, salari, data_alta, actiu, id_dept) VALUES
     ( 1, 'Héctor', 'Maeso', 'hmaeso@institut.cat', '600111222', 2950.00, '2010-09-01', TRUE,  1),
     ( 2, 'Marta', 'Soler', 'msoler@institut.cat', '600222333', 2700.50, '2015-09-01', TRUE,  1),
@@ -100,107 +98,65 @@ INSERT INTO modul (id_modul, codi, nom_modul, hores, curs, id_prof) VALUES
 -- ------------------------------------------------------------
 --  MATRÍCULES
 -- ------------------------------------------------------------
---  PK composta: (id_alumne, id_modul, convocatoria).
---  Inclou:
---    · Notes >= 5 (aprovats) i < 5 (suspesos)
---    · Notes NULL (avaluació pendent)
---    · Múltiples convocatòries per al mateix alumne i mòdul
---    · Alumnes amb moltes matrícules i alumnes amb cap (Quim, Adriana)
+
 INSERT INTO matricula (id_alumne, id_modul, nota_final, convocatoria) VALUES
-    -- Marc (1) — Informàtica curs 1
     ( 1,  1, 7.50, 1),
     ( 1,  2, 6.25, 1),
     ( 1,  3, 8.00, 1),
-    ( 1,  4, 4.50, 1),   -- suspès 1a conv
-    ( 1,  4, 5.50, 2),   -- aprovat 2a conv
+    ( 1,  4, 4.50, 1),  
+    ( 1,  4, 5.50, 2),  
     ( 1,  5, 9.00, 1),
     ( 1, 11, 7.00, 1),
     ( 1, 13, 6.50, 1),
-
-    -- Laia (2) — Informàtica curs 2
     ( 2,  6, 8.50, 1),
     ( 2,  7, 7.25, 1),
     ( 2, 12, 6.00, 1),
-    ( 2, 14, NULL, 1),   -- pendent
-
-    -- Pol (3) — repetidor a Bases de dades (3 convocatòries)
+    ( 2, 14, NULL, 1), 
     ( 3,  1, 4.25, 1),
     ( 3,  1, 3.00, 2),
-    ( 3,  1, 5.10, 3),   -- aprovat in extremis
+    ( 3,  1, 5.10, 3),   
     ( 3,  2, 5.00, 1),
     ( 3,  3, 6.50, 1),
-
-    -- Júlia (4) — Disseny curs 2 (arrossega un de curs 1)
     ( 4, 10, 8.75, 1),
     ( 4,  8, 7.00, 1),
     ( 4, 12, 5.50, 1),
-
-    -- Aleix (5) — Informàtica curs 1, alguna nota pendent
     ( 5,  1, NULL, 1),
     ( 5,  2, 7.80, 1),
     ( 5,  3, 9.10, 1),
-
-    -- Berta (6) — Disseny curs 1
     ( 6,  8, 8.20, 1),
     ( 6,  9, 6.50, 1),
     ( 6, 11, 4.00, 1),
     ( 6, 11, 6.10, 2),
     ( 6, 13, 7.50, 1),
-
-    -- Nil (7) — acabat de començar (2025): tot pendent
     ( 7,  1, NULL, 1),
     ( 7,  2, NULL, 1),
     ( 7,  3, NULL, 1),
-
-    -- Clara (8) — Sanitat
     ( 8, 15, 8.00, 1),
     ( 8, 16, 7.40, 1),
     ( 8, 13, 6.80, 1),
-
-    -- Arnau (9) — Electrònica curs 2
     ( 9, 17, 7.00, 1),
     ( 9, 18, 8.50, 1),
-
-    -- Maria (10) — Administració + Anglès
     (10, 19, 6.20, 1),
     (10, 11, 5.30, 1),
-
-    -- Èlia (11) — Disseny curs 1, bona alumna
     (11,  8, 9.50, 1),
     (11,  9, 8.80, 1),
     (11, 11, 7.20, 1),
     (11, 13, 8.00, 1),
-
-    -- Roger (12) — Informàtica curs 2 amb assignatures arrossegades
     (12,  6, 4.00, 1),
     (12,  6, 5.20, 2),
     (12,  7, 6.00, 1),
-
-    -- Ona (13) — Sanitat (només una matrícula)
     (13, 15, 7.30, 1),
-
-    -- Biel (14) — Electrònica curs 1 + Anglès suspès i recuperat
     (14, 17, 5.80, 1),
     (14, 11, 4.50, 1),
     (14, 11, 5.00, 2),
-
-    -- Jana (15) — Administració, just començada
     (15, 19, NULL, 1),
     (15, 11, NULL, 1),
-
-    -- Aitor (16) — Informàtica curs 2
     (16,  6, 8.20, 1),
     (16,  7, 7.50, 1),
-
-    -- Lluc (17) — Informàtica, aprovat just
     (17,  1, 5.00, 1),
     (17,  2, 5.10, 1),
     (17,  3, 5.20, 1),
-
-    -- Gal·la (18) — Sanitat curs 2
     (18, 16, 9.20, 1),
     (18, 12, 8.10, 1);
-
-    -- Quim (19) i Adriana (20): SENSE matrícules a propòsit.
 
 
