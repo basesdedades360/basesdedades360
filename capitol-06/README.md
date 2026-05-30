@@ -17,18 +17,15 @@ capitol-06/
 │   ├── exercici_6_1_consultes_dml_basiques.sql
 │   ├── exercici_6_2_filtratge.sql
 │   ├── exercici_6_3_expressions_regulars.sql
-│   ├── exercici_6_4_estadistiques_de_notes_amb_funcions.sql
-│   ├── exercici_6_5_validacio_i_extraccio_amb_expressio.sql
-│   └── exercici_6_6_auditoria_qualitat_dades_textuals.sql
+│   └── exercici_6_4_expresions_regulars.sql
 └── PostgreSQL/
     ├── 01_institut_postgresql.sql         ← esquema (DDL)
     ├── 02_institut_inserts_postgresql.sql ← dades de prova (DML)
     ├── exercici_6_1_consultes_dml_basiques.sql
     ├── exercici_6_2_filtratge.sql
     ├── exercici_6_3_expressions_regulars.sql
-    ├── exercici_6_4_estadistiques_de_notes_amb_funcions.sql
-    ├── exercici_6_5_validacio_i_extraccio_amb_expressio.sql
-    └── exercici_6_6_auditoria_qualitat_dades_textuals.sql
+    └── exercici_6_4_expressions_regulars.sql
+
 ```
 
 ### Scripts d'esquema i dades
@@ -46,14 +43,6 @@ Els scripts d'esquema (`01_`) creen les mateixes 5 taules amb una estructura equ
 
 Tots els exercicis estan disponibles en doble versió **MySQL/MariaDB** i **PostgreSQL**:
 
-| Exercici | Tema |
-|---|---|
-| **6.1** | `INSERT`, `UPDATE`, `DELETE` i `SELECT` bàsics sobre `institut`. |
-| **6.2** | Filtratge avançat amb `WHERE`, agrupacions (`GROUP BY`/`HAVING`) i `ORDER BY`. |
-| **6.3** | Funcions integrades en una sola consulta: text, dates i nombres. |
-| **6.4** | Estadístiques de notes amb funcions d'agregació (`AVG`, `MIN`, `MAX`, `COUNT`). |
-| **6.5** | Validació i extracció amb expressions regulars sobre la taula `professor`. |
-| **6.6** | **Auditoria multi-taula de la qualitat de les dades textuals**: emails, telèfons i codis de mòdul; informe consolidat amb `UNION ALL`. |
 
 ---
 
@@ -124,22 +113,6 @@ psql -U <usuari> -d institut -f PostgreSQL/exercici_6_6_auditoria_qualitat_dades
 
 ---
 
-## ⚙️ Característiques utilitzades
-
-L'esquema fa servir característiques modernes de cada SGBD que cal tenir en compte:
-
-| Característica | MySQL/MariaDB | PostgreSQL |
-|---|---|---|
-| Autoincrement | `AUTO_INCREMENT` | `GENERATED ALWAYS AS IDENTITY` |
-| Tipus enter petit no negatiu | `TINYINT UNSIGNED` | `SMALLINT` |
-| Decimals | `DECIMAL(p,s)` | `NUMERIC(p,s)` |
-| Tipus any | `YEAR` | `SMALLINT` + `CHECK` |
-| `CHECK` natiu | MySQL ≥ 8.0.16 / MariaDB ≥ 10.2 | Sempre |
-| Codificació | `utf8mb4` (BD) | `UTF8` (BD) |
-
-> ⚠️ **Versions anteriors de MySQL** (< 8.0.16) ignoraven les restriccions `CHECK` silenciosament. Si treballes amb una versió antiga, els `CHECK` es validaran al codi de l'aplicació, no al SGBD.
-
----
 
 ## ✅ Verificació ràpida
 
@@ -171,26 +144,6 @@ UNION ALL SELECT 'matricula',  COUNT(*) FROM matricula;
 
 El resultat esperat és: 7 departaments, 13 professors, 20 alumnes, 20 mòduls i 58 matrícules.
 
----
-
-## 🧪 Expressions regulars (secció 6.9 del llibre)
-
-Els exercicis **6.5** i **6.6** acompanyen la secció **§6.9 — Expressions regulars** del llibre, on s'introdueixen els patrons regex (`^`, `$`, `[a-z]`, `{n,m}`, `|`, etc.) i les funcions associades:
-
-| Motor | Operador / funció clau | Exemples al repositori |
-|---|---|---|
-| MySQL/MariaDB 8.0+ | `REGEXP_LIKE`, `REGEXP_SUBSTR`, `REGEXP_REPLACE`, `REGEXP_INSTR`, `col REGEXP 'patró'` | exercicis 6.5 i 6.6 (MySQL) |
-| PostgreSQL | Operadors `~`, `~*`, `!~`, `!~*` i funcions `regexp_match`, `regexp_replace`, `regexp_matches`... | exercicis 6.5 i 6.6 (PostgreSQL) |
-
-L'exercici **6.6** és especialment recomanat per veure el patró típic d'auditoria: combinació de `NOT REGEXP_LIKE` / `!~` amb `UNION ALL` per generar un únic informe consolidat sobre múltiples taules.
-
----
-
-## 🔗 Recursos relacionats al llibre
-
-- **Capítol 5** — *Disseny físic i tipus de dades*: detalla per què s'han triat aquests tipus i restriccions.
-- **Capítol 6** — *Fonaments de SQL*: utilitza aquest esquema per a tots els exemples i exercicis.
-- **Capítol 7** — *`JOIN`s i subconsultes*: aquí veuràs com extreure informació combinada de les 5 taules.
 
 ---
 
