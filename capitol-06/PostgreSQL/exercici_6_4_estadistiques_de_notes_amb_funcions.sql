@@ -1,27 +1,27 @@
 -- Exercici resolt 6.4
--- Estadístiques de notes amb funcions numèriques i gestió segura de `NULL`
--- Sintaxi: PostgreSQL
 
-SELECT
-    id_modul,
-    COUNT(*)                                                         AS total_matricules,
-    COUNT(nota_final)                                                AS notes_registrades,
-    SUM(CASE WHEN nota_final >= 5 THEN 1 ELSE 0 END)                 AS aprovats,
-    SUM(CASE WHEN nota_final <  5 THEN 1 ELSE 0 END)                 AS suspesos,
-    COALESCE(
-        ROUND(
-            100.0 * SUM(CASE WHEN nota_final >= 5 THEN 1 ELSE 0 END)
-                  / NULLIF(COUNT(nota_final), 0),
-            1
-        ),
-        0.0
-    )                                                                AS taxa_aprovats_pct,
-    ROUND(AVG(nota_final), 2)                                        AS nota_mitja_arrod,
-    TRUNC(AVG(nota_final), 1)                                        AS nota_mitja_truncada,
-    MAX(nota_final)                                                  AS nota_max,
-    MIN(nota_final)                                                  AS nota_min,
-    COALESCE(MAX(nota_final) - MIN(nota_final), 0)                   AS rang
-FROM matricula
-GROUP BY id_modul
-HAVING COUNT(*) >= 1
-ORDER BY taxa_aprovats_pct DESC;
+-- 1
+SELECT id_alumne, nom, cognoms, email
+FROM   alumne
+WHERE  email !~ '@alumnes\.cat$';
+
+-- 2
+SELECT id_prof, nom, cognoms, email
+FROM   professor
+WHERE  email !~ '@institut\.cat$';
+
+-- 3
+SELECT 'alumne' AS taula, id_alumne AS id, telefon
+FROM   alumne
+WHERE  telefon IS NOT NULL
+  AND  telefon !~ '^[67][0-9]{8}$'
+UNION ALL
+SELECT 'professor', id_prof, telefon
+FROM   professor
+WHERE  telefon IS NOT NULL
+  AND  telefon !~ '^[67][0-9]{8}$';
+
+-- 4
+SELECT id_modul, codi, nom_modul
+FROM   modul
+WHERE  codi !~ '^[A-Z]{3}[0-9]{3}$';
