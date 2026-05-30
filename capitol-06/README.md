@@ -16,7 +16,7 @@ capitol-06/
 │   ├── 02_institut_inserts_mysql.sql      ← dades de prova (DML)
 │   ├── exercici_6_1_consultes_dml_basiques.sql
 │   ├── exercici_6_2_filtratge.sql
-│   ├── exercici_6_3_funcions_integrades_en_una_sola_con.sql
+│   ├── exercici_6_3_expressions_regulars.sql
 │   ├── exercici_6_4_estadistiques_de_notes_amb_funcions.sql
 │   ├── exercici_6_5_validacio_i_extraccio_amb_expressio.sql
 │   └── exercici_6_6_auditoria_qualitat_dades_textuals.sql
@@ -25,7 +25,7 @@ capitol-06/
     ├── 02_institut_inserts_postgresql.sql ← dades de prova (DML)
     ├── exercici_6_1_consultes_dml_basiques.sql
     ├── exercici_6_2_filtratge.sql
-    ├── exercici_6_3_funcions_integrades_en_una_sola_con.sql
+    ├── exercici_6_3_expressions_regulars.sql
     ├── exercici_6_4_estadistiques_de_notes_amb_funcions.sql
     ├── exercici_6_5_validacio_i_extraccio_amb_expressio.sql
     └── exercici_6_6_auditoria_qualitat_dades_textuals.sql
