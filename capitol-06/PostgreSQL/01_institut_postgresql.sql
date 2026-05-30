@@ -1,7 +1,5 @@
 -- PostgreSQL
 
--- Crear la base de dades (amb codificació UTF8)
--- A PostgreSQL, la codificació es fixa al crear la BD i no es canvia després.
 
 CREATE DATABASE institut
     WITH ENCODING 'UTF8'
@@ -9,7 +7,7 @@ CREATE DATABASE institut
     LC_CTYPE   'ca_ES.UTF-8'
     TEMPLATE template0;
 
-\c institut   -- canviar de connexió a la nova BD (psql)
+\c institut   
 
 -- Taula de departaments
 CREATE TABLE departament (
@@ -44,7 +42,7 @@ CREATE TABLE alumne (
     curs_inici  SMALLINT     NOT NULL CHECK (curs_inici BETWEEN 1900 AND 2155)
 );
 
--- Taula de mòduls (assignatures)
+-- Taula de mòduls 
 CREATE TABLE modul (
     id_modul   SMALLINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     codi       CHAR(6)      UNIQUE NOT NULL,
