@@ -1,8 +1,4 @@
--- Exercici resolt 7.1
--- Consultes multi-taula amb JOINs i agregació
--- Sintaxi: MySQL / MariaDB
-
--- a) Tots els alumnes amb les seves notes (LEFT JOIN per incloure els sense notes)
+-- 1 
 SELECT
   CONCAT(a.nom, ' ', a.cognoms) AS alumne,
   m.nom_modul,
@@ -17,8 +13,7 @@ LEFT JOIN matricula ma ON a.id_alumne = ma.id_alumne
 LEFT JOIN modul m      ON ma.id_modul  = m.id_modul
 ORDER BY a.cognoms, a.nom, m.nom_modul;
 
--- b) Alumnes amb nota mitjana superior a la mitjana global
--- Estratègia: GROUP BY per alumne i HAVING amb subconsulta sobre la mitjana global
+-- 2
 SELECT
   CONCAT(a.nom, ' ', a.cognoms) AS alumne,
   ROUND(AVG(ma.nota_final), 2)  AS nota_mitja_alumne
@@ -31,7 +26,7 @@ HAVING AVG(ma.nota_final) > (
 )
 ORDER BY nota_mitja_alumne DESC;
 
--- c) Professors amb resum de mòduls (LEFT JOIN per incloure sense mòduls)
+-- 3 
 SELECT
   CONCAT(p.nom, ' ', p.cognoms)   AS professor,
   d.nom_dept                      AS departament,
@@ -42,3 +37,4 @@ INNER JOIN departament d ON p.id_dept  = d.id_dept
 LEFT  JOIN modul m       ON m.id_prof  = p.id_prof
 GROUP BY p.id_prof, p.nom, p.cognoms, d.nom_dept
 ORDER BY total_hores DESC;
+
