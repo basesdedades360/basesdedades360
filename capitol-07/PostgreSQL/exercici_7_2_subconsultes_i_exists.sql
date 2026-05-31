@@ -1,25 +1,18 @@
--- Exercici resolt 7.2
--- Subconsultes i EXISTS
--- Sintaxi: PostgreSQL
-
--- a) Alumnes que no han suspès cap mòdul
--- Estratègia: alumnes amb almenys una nota i sense cap suspens
+-- 1
 SELECT nom, cognoms
 FROM alumne a
 WHERE EXISTS (
-  -- té almenys una nota registrada
   SELECT 1 FROM matricula
   WHERE id_alumne = a.id_alumne
     AND nota_final IS NOT NULL
 )
 AND NOT EXISTS (
-  -- i no té cap nota inferior a 5
   SELECT 1 FROM matricula
   WHERE id_alumne = a.id_alumne
     AND nota_final < 5
 );
 
--- b) Mòduls amb nota mitjana superior a la de DAW01
+-- 2
 SELECT
   m.codi,
   m.nom_modul,
@@ -37,7 +30,8 @@ HAVING AVG(ma.nota_final) > (
 )
 ORDER BY nota_mitja DESC;
 
--- c) Departaments amb indicador de professors de salari alt
+
+-- 3
 SELECT
   d.nom_dept,
   CASE
