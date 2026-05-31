@@ -12,24 +12,12 @@ Cada problema es presenta amb dos enunciats diferents: la versió "**botiga**" (
 capitol-09/
 ├── README.md
 ├── MySQL/
-│   ├── exercici_9_1_processar_una_comanda_pas_a_pas_amb.sql
-│   ├── exercici_9_1_versio_institut_matricular_un_alumne_a_diversos_mod.sql
+│   ├── exercici_9_1_matricular_un_alumne.sql
 │   ├── exercici_9_2_analisi_de_problemes_de_concurrenci.sql
-│   ├── exercici_9_2_versio_institut_analisi_de_problemes_de_concurrenci.sql
-│   └── exercici_9_3_versio_institut_provocar_i_evitar_un_deadlock_reass.sql
 └── PostgreSQL/
-    └── (mateixos fitxers, sintaxi PostgreSQL on cal)
-```
+    ├── exercici_9_1_matricular_un_alumne.sql
+    └── exercici_9_2_analisi_de_problemes_de_concurrenci.sql
 
-| Exercici | Enunciat | Tema |
-|---|---|---|
-| **9.1** | Botiga | Processar una comanda pas a pas amb transacció: validar estoc, calcular total, descomptar inventari, atòmicament. |
-| **9.1** (versió institut) | Matricular un alumne a diversos mòduls amb transacció i `SAVEPOINT`. |
-| **9.2** | Botiga | Anàlisi dels tres problemes clàssics de concurrència (lectura bruta, no repetible, fantasma). |
-| **9.2** (versió institut) | Els mateixos problemes vistos sobre la base de dades de l'institut. |
-| **9.3** (versió institut) | Provocar i evitar un *deadlock* reassignant mòduls a professors. |
-
-> ℹ️ L'exercici **9.3 (versió botiga)** del capítol no genera codi SQL aïllat — es presenta com un escenari pas a pas en dues sessions simultànies amb taules markdown. Si vols reproduir-lo, fes servir la versió institut, que és funcionalment equivalent.
 
 ---
 
@@ -66,30 +54,13 @@ L'exercici 9.1 sí que es pot executar en una sola sessió:
 
 ```bash
 # MySQL / MariaDB
-mysql -u <usuari> -p institut < MySQL/exercici_9_1_processar_una_comanda_pas_a_pas_amb.sql
+mysql -u <usuari> -p institut < MySQL/exercici_9_1_matricular_un_alumne.sql
 
 # PostgreSQL
-psql -U <usuari> -d institut -f PostgreSQL/exercici_9_1_versio_institut_matricular_un_alumne_a_diversos_mod.sql
+psql -U <usuari> -d institut -f PostgreSQL/exercici_9_1_matricular_un_alumne.sql
 ```
 
 ---
 
-## 🔑 Diferències sintàctiques rellevants
-
-| Concepte | MySQL/MariaDB | PostgreSQL |
-|---|---|---|
-| Iniciar transacció | `START TRANSACTION;` o `BEGIN;` | `BEGIN;` |
-| Bloquejar fila | `SELECT ... FOR UPDATE;` | `SELECT ... FOR UPDATE;` |
-| Identificador inserit | `LAST_INSERT_ID()` | `RETURNING id` |
-| Veure transaccions actives | `SHOW PROCESSLIST` | `SELECT * FROM pg_stat_activity` |
-| Configurar aïllament | `SET TRANSACTION ISOLATION LEVEL ...;` | `SET TRANSACTION ISOLATION LEVEL ...;` |
-| Veure deadlocks recents | `SHOW ENGINE INNODB STATUS` | logs del servidor |
-
----
-
-## 🔗 Referències al llibre
-
-- **Capítol 6** — *Fonaments de SQL*. Base de dades `institut` utilitzada per les versions "institut".
-- **Capítol 8** — *Optimització de consultes*. Els bloquejos i els índexs interactuen: índexs ben dissenyats redueixen els bloquejos.
 
 [← Tornar al README principal](../README.md)
