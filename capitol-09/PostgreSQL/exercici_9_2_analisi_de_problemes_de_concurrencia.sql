@@ -1,5 +1,5 @@
 -- Exercici resolt 9.2
--- MySQL / MariaDB
+-- PostgreSQL
 
 -- Escenari A 
 BEGIN;
