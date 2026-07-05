@@ -18,7 +18,6 @@ Aquest repositori conté els **scripts SQL, scripts MongoDB, exercicis resolts i
 *Bases de Dades 360* és un llibre adreçat a estudiants de cicles formatius i a qualsevol persona que vulgui aprendre bases de dades des de zero. Cobreix tot el cicle de vida d'una base de dades: disseny conceptual i lògic, normalització, SQL fonamental i avançat, optimització, transaccions, seguretat i una panoràmica del món NoSQL.
 
 
-
 ---
 
 ## 📂 Estructura del repositori
@@ -54,70 +53,27 @@ basesdedades360/
 
 ---
 
-## 📚 Índex de capítols
+## 🎯 Presentació del llibre
 
-| Capítol | Tema | Carpeta | MySQL | PostgreSQL | MongoDB |
-|---|---|---|:-:|:-:|:-:|
-| 5 | Disseny físic i tipus de dades | [`capitol-05/`](./capitol-05/) | ✅ | ✅ | – |
-| 6 | Fonaments de SQL: DDL i DML | [`capitol-06/`](./capitol-06/) | ✅ | ✅ | – |
-| 7 | Agrupacions, JOINs i subconsultes | [`capitol-07/`](./capitol-07/) | ✅ | ✅ | – |
-| 8 | Optimització de consultes | [`capitol-08/`](./capitol-08/) | ✅ | ✅ | – |
-| 9 | Transaccions i concurrència | [`capitol-09/`](./capitol-09/) | ✅ | ✅ | – |
-| 10 | Vistes i diccionari de dades | [`capitol-10/`](./capitol-10/) | ✅ | ✅ | – |
-| 11 | Programació al SGBD (MySQL/MariaDB) | [`capitol-11/`](./capitol-11/) | ✅ | – | – |
-| 12 | Programació al SGBD (PL/pgSQL) | [`capitol-12/`](./capitol-12/) | – | ✅ | – |
-| 13 | Control d'accés | [`capitol-13/`](./capitol-13/) | ✅ | ✅ | – |
-| 14 | Bases de dades no relacionals (MongoDB) | [`capitol-14/`](./capitol-14/) | – | – | ✅ |
+*Bases de Dades 360* és una introducció pràctica i actualitzada al món de les bases de dades, pensada per a estudiants i professionals que volen una visió completa des del disseny relacional fins a aplicacions NoSQL. El llibre inclou exercicis resolts i exemples paral·lels en MySQL/MariaDB, PostgreSQL i MongoDB per facilitar l'aprenentatge comparatiu.
 
-> Llegenda: ✅ exercicis complets · – no aplicable al SGBD
+Compra o descarrega el llibre i troba materials addicionals a:
+
+- Pàgina del llibre i recursos: [Jordi Quesada Balaguer — Bases de dades 360°](https://jordiquesada.github.io/)
+- Còpia del codi i descàrrega: [https://github.com/basesdedades360/basesdedades360](https://github.com/basesdedades360/basesdedades360)
 
 ---
 
-## 🚀 Com usar els scripts
+## 🌐 Estructura de la pàgina web
 
-Cada capítol conté el seu propi README amb instruccions específiques. La pauta general:
+La pàgina web del llibre està organitzada per seccions que faciliten l'accés al contingut, recursos i compra/descàrrega:
 
-### Opció 1 — Online (sense instal·lar res)
+- Inici: presentació i enllaços principals (compra, descàrrega, repositori).
+- Contingut: informació del llibre i índex de capítols amb enllaços a repositoris i recursos.
+- Recursos: exemples, fitxers addicionals i materials complementaris per a docents i estudiants.
+- Contacte: informació de l'autor i enllaços a xarxes / correu electrònic.
 
-La manera més ràpida de provar els scripts és amb un *playground* en línia:
-
-- [DB Fiddle (MySQL 8.0)](https://www.db-fiddle.com/?rdbms=mysql_8.0)
-- [DB Fiddle (PostgreSQL 15)](https://www.db-fiddle.com/?rdbms=postgres_15)
-
-Copia el contingut del fitxer `.sql` al panell esquerre i prem **Run**.
-
-### Opció 2 — Localment amb el client de línia d'ordres
-
-```bash
-# MySQL / MariaDB
-mysql -u root -p < capitol-06/MySQL/01_institut_mysql.sql
-
-# PostgreSQL
-psql -U postgres -f capitol-06/PostgreSQL/01_institut_postgresql.sql
-```
-
-### Opció 3 — Amb una eina gràfica
-
-Obre el fitxer `.sql` amb el teu client habitual (DBeaver, MySQL Workbench, pgAdmin, HeidiSQL, TablePlus...) i executa l'script complet.
-
-### Opció 4 — MongoDB (capítol 14)
-
-Per als scripts del capítol 14, cal `mongosh` (la consola oficial de MongoDB):
-
-```bash
-cd capitol-14/MongoDB
-mongosh
-```
-
-I, des de la consola:
-
-```javascript
-load("01_institut_mongodb.js")
-use institut
-load("exercici_14_1_crud_i_consultes_basiques.js")
-```
-
-També es pot fer servir **MongoDB Compass** (interfície gràfica) o **MongoDB Atlas** (servei al núvol, capa gratuïta).
+Consulta la pàgina per a més detalls: [Jordi Quesada Balaguer — Bases de dades 360°](https://jordiquesada.github.io/)
 
 ---
 
@@ -174,6 +130,6 @@ Pots **copiar, redistribuir, transformar i fer-ne ús**, fins i tot comercialmen
 
 **Jordi Quesada** — [`jordi.quesada@proton.me`](mailto:jordi.quesada@proton.me)
 
-GitHub: [@basesdedades360](https://github.com/basesdedades360/) · Repositori: [`basesdedades360`](https://github.com/basesdedades360/basededades360/)
+GitHub: [@basesdedades360](https://github.com/basesdedades360/) · Repositori: [https://github.com/basesdedades360/basesdedades360](https://github.com/basesdedades360/basesdedades360)
 
 > Si aquest material t'ha sigut útil, considera deixar una ⭐ al repositori. Ajuda a fer-lo visible a altres estudiants i docents.
