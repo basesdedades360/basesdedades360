@@ -17,6 +17,24 @@ Aquest repositori conté els **scripts SQL, scripts MongoDB, exercicis resolts i
 
 *Bases de Dades 360* és un llibre adreçat a estudiants de cicles formatius i a qualsevol persona que vulgui aprendre bases de dades des de zero. Cobreix tot el cicle de vida d'una base de dades: disseny conceptual i lògic, normalització, SQL fonamental i avançat, optimització, transaccions, seguretat i una panoràmica del món NoSQL.
 
+---
+
+## 🎯 Presentació del llibre
+
+<p align="center">
+  <a href="https://www.bubok.es/libros/286477/bases-de-dades-360-del-disseny-al-nosql" target="_blank" rel="noopener noreferrer">
+    <img src="./portada.png" alt="Portada de Bases de Dades 360" width="320" />
+  </a>
+</p>
+
+*Bases de Dades 360* és una introducció pràctica i actualitzada al món de les bases de dades, pensada per a estudiants i professionals que volen una visió completa des del disseny relacional fins a aplicacions NoSQL. El llibre inclou exercicis resolts i exemples paral·lels en MySQL/MariaDB, PostgreSQL i MongoDB per facilitar l'aprenentatge comparatiu.
+
+La descàrrega del llibre és gratuïta, i el llibre en paper està disponible a preu de cost a:
+
+- [Comprar o descarregar el llibre](https://www.bubok.es/libros/286477/bases-de-dades-360-del-disseny-al-nosql)
+- [Repositori del projecte](https://github.com/basesdedades360/basesdedades360)
+
+> 📌 El contingut digital és gratuït; el format en paper es pot adquirir a preu de cost.
 
 ---
 
@@ -50,30 +68,6 @@ basesdedades360/
 ```
 
 > ℹ️ Els **capítols 11 i 12** són dues versions del mateix tema (*Programació al SGBD*): el 11 amb MySQL/MariaDB i el 12 amb PostgreSQL (PL/pgSQL). Cada lector pot fer servir el que correspongui al seu motor.
-
----
-
-## 🎯 Presentació del llibre
-
-*Bases de Dades 360* és una introducció pràctica i actualitzada al món de les bases de dades, pensada per a estudiants i professionals que volen una visió completa des del disseny relacional fins a aplicacions NoSQL. El llibre inclou exercicis resolts i exemples paral·lels en MySQL/MariaDB, PostgreSQL i MongoDB per facilitar l'aprenentatge comparatiu.
-
-Compra o descarrega el llibre i troba materials addicionals a:
-
-- Pàgina del llibre i recursos: [Jordi Quesada Balaguer — Bases de dades 360°](https://jordiquesada.github.io/)
-- Còpia del codi i descàrrega: [https://github.com/basesdedades360/basesdedades360](https://github.com/basesdedades360/basesdedades360)
-
----
-
-## 🌐 Estructura de la pàgina web
-
-La pàgina web del llibre està organitzada per seccions que faciliten l'accés al contingut, recursos i compra/descàrrega:
-
-- Inici: presentació i enllaços principals (compra, descàrrega, repositori).
-- Contingut: informació del llibre i índex de capítols amb enllaços a repositoris i recursos.
-- Recursos: exemples, fitxers addicionals i materials complementaris per a docents i estudiants.
-- Contacte: informació de l'autor i enllaços a xarxes / correu electrònic.
-
-Consulta la pàgina per a més detalls: [Jordi Quesada Balaguer — Bases de dades 360°](https://jordiquesada.github.io/)
 
 ---
 
