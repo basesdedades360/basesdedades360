@@ -1,6 +1,6 @@
-# Bases de Dades 360°
+# Bases de Dades 360°: Del disseny al NoSQL
 
-> *Del disseny al NoSQL — exercicis resolts en MySQL/MariaDB, PostgreSQL i MongoDB.*
+> *Teoria, exemples i exercicis resolts en MySQL/MariaDB, PostgreSQL i MongoDB.*
 
 [![Llicència: CC BY-SA 4.0](https://img.shields.io/badge/Llic%C3%A8ncia-CC%20BY--SA%204.0-lightgrey.svg)](./LICENSE)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com/)
@@ -8,12 +8,6 @@
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-7.0+-47A248?logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 ![Idioma: català](https://img.shields.io/badge/idioma-catal%C3%A0-FFCD00)
-
-Aquest repositori conté els **scripts SQL, scripts MongoDB, exercicis resolts i recursos complementaris** del llibre *Bases de Dades 360°*. La característica distintiva del llibre — i d'aquest repositori — és que **cada exercici es presenta en paral·lel** per als dos SGBD relacionals més utilitzats del programari lliure (**MySQL/MariaDB** i **PostgreSQL**), i el capítol final introdueix també **MongoDB** com a referent del món NoSQL documental.
-
----
-
-## 🎯 Presentació del llibre
 
 <p align="center">
   <a href="https://www.bubok.es/libros/286477/bases-de-dades-360-del-disseny-al-nosql" target="_blank" rel="noopener noreferrer">
@@ -30,36 +24,30 @@ La descàrrega del llibre és gratuïta, i el llibre en paper està disponible a
 
 > 📌 El contingut digital és gratuït; el format en paper es pot adquirir a preu de cost.
 
+
 ---
 
-## � Bases de Dades 360°
+## El repositori
 
-```
-basesdedades360/
-├── README.md                  ← aquest fitxer
-├── LICENSE                    ← CC BY-SA 4.0
-├── .gitignore
-├── capitol-05/                ← Disseny físic i tipus de dades
-│   ├── README.md
-│   ├── MySQL/
-│   └── PostgreSQL/
-├── capitol-06/                ← Fonaments de SQL: DDL i DML
-│   ├── README.md
-│   ├── MySQL/                 (esquema + dades + exercicis)
-│   └── PostgreSQL/
-├── capitol-07/                ← Agrupacions, JOINs i subconsultes
-├── capitol-08/                ← Optimització de consultes
-├── capitol-09/                ← Transaccions i concurrència
-├── capitol-10/                ← Vistes i diccionari de dades
-├── capitol-11/                ← Programació al SGBD (MySQL/MariaDB)
-│   └── MySQL/                 (capítol exclusivament MySQL/MariaDB)
-├── capitol-12/                ← Programació al SGBD (PL/pgSQL)
-│   └── PostgreSQL/            (capítol exclusivament PostgreSQL)
-├── capitol-13/                ← Control d'accés
-└── capitol-14/                ← Bases de dades no relacionals (MongoDB)
-    ├── README.md
-    └── MongoDB/               (capítol exclusivament MongoDB)
-```
+Aquest repositori conté els **scripts SQL, scripts MongoDB, exercicis resolts i recursos complementaris** del llibre *Bases de Dades 360°*. Una característica distintiva del llibre — i d'aquest repositori — és que **cada exercici es presenta en paral·lel** per als dos SGBD relacionals més utilitzats del programari lliure (**MySQL/MariaDB** i **PostgreSQL**), i el capítol final introdueix també **MongoDB** com a referent del món NoSQL documental.
+---
+
+## 📚 Índex de capítols
+
+| Capítol | Tema | Carpeta | MySQL | PostgreSQL | MongoDB |
+|---|---|---|:-:|:-:|:-:|
+| 5 | Disseny físic i tipus de dades | [`capitol-05/`](./capitol-05/) | ✅ | ✅ | – |
+| 6 | Fonaments de SQL: DDL i DML | [`capitol-06/`](./capitol-06/) | ✅ | ✅ | – |
+| 7 | Agrupacions, JOINs i subconsultes | [`capitol-07/`](./capitol-07/) | ✅ | ✅ | – |
+| 8 | Optimització de consultes | [`capitol-08/`](./capitol-08/) | ✅ | ✅ | – |
+| 9 | Transaccions i concurrència | [`capitol-09/`](./capitol-09/) | ✅ | ✅ | – |
+| 10 | Vistes i diccionari de dades | [`capitol-10/`](./capitol-10/) | ✅ | ✅ | – |
+| 11 | Programació al SGBD (MySQL/MariaDB) | [`capitol-11/`](./capitol-11/) | ✅ | – | – |
+| 12 | Programació al SGBD (PL/pgSQL) | [`capitol-12/`](./capitol-12/) | – | ✅ | – |
+| 13 | Control d'accés | [`capitol-13/`](./capitol-13/) | ✅ | ✅ | – |
+| 14 | Bases de dades no relacionals (MongoDB) | [`capitol-14/`](./capitol-14/) | – | – | ✅ |
+
+> Llegenda: ✅ exercicis complets · – no aplicable al SGBD
 
 > ℹ️ Els **capítols 11 i 12** són dues versions del mateix tema (*Programació al SGBD*): el 11 amb MySQL/MariaDB i el 12 amb PostgreSQL (PL/pgSQL). Cada lector pot fer servir el que correspongui al seu motor.
 
