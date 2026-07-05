@@ -1,4 +1,4 @@
-# Bases de Dades 360
+# Bases de Dades 360°
 
 > *Del disseny al NoSQL — exercicis resolts en MySQL/MariaDB, PostgreSQL i MongoDB.*
 
@@ -9,13 +9,7 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-7.0+-47A248?logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 ![Idioma: català](https://img.shields.io/badge/idioma-catal%C3%A0-FFCD00)
 
-Aquest repositori conté els **scripts SQL, scripts MongoDB, exercicis resolts i recursos complementaris** del llibre *Bases de Dades 360*. La característica distintiva del llibre — i d'aquest repositori — és que **cada exercici es presenta en paral·lel** per als dos SGBD relacionals més utilitzats del programari lliure (**MySQL/MariaDB** i **PostgreSQL**), i el capítol final introdueix també **MongoDB** com a referent del món NoSQL documental.
-
----
-
-## 📑 Sobre el llibre
-
-*Bases de Dades 360* és un llibre adreçat a estudiants de cicles formatius i a qualsevol persona que vulgui aprendre bases de dades des de zero. Cobreix tot el cicle de vida d'una base de dades: disseny conceptual i lògic, normalització, SQL fonamental i avançat, optimització, transaccions, seguretat i una panoràmica del món NoSQL.
+Aquest repositori conté els **scripts SQL, scripts MongoDB, exercicis resolts i recursos complementaris** del llibre *Bases de Dades 360°*. La característica distintiva del llibre — i d'aquest repositori — és que **cada exercici es presenta en paral·lel** per als dos SGBD relacionals més utilitzats del programari lliure (**MySQL/MariaDB** i **PostgreSQL**), i el capítol final introdueix també **MongoDB** com a referent del món NoSQL documental.
 
 ---
 
@@ -23,11 +17,11 @@ Aquest repositori conté els **scripts SQL, scripts MongoDB, exercicis resolts i
 
 <p align="center">
   <a href="https://www.bubok.es/libros/286477/bases-de-dades-360-del-disseny-al-nosql" target="_blank" rel="noopener noreferrer">
-    <img src="./portada.png" alt="Portada de Bases de Dades 360" width="320" />
+    <img src="./portada.png" alt="Portada de Bases de Dades 360°" width="320" />
   </a>
 </p>
 
-*Bases de Dades 360* és una introducció pràctica i actualitzada al món de les bases de dades, pensada per a estudiants i professionals que volen una visió completa des del disseny relacional fins a aplicacions NoSQL. El llibre inclou exercicis resolts i exemples paral·lels en MySQL/MariaDB, PostgreSQL i MongoDB per facilitar l'aprenentatge comparatiu.
+*Bases de Dades 360°°* és una introducció pràctica i actualitzada al món de les bases de dades, pensada per a estudiants i professionals que volen una visió completa des del disseny relacional fins a aplicacions NoSQL. El llibre inclou exercicis resolts i exemples paral·lels en MySQL/MariaDB, PostgreSQL i MongoDB per facilitar l'aprenentatge comparatiu.
 
 La descàrrega del llibre és gratuïta, i el llibre en paper està disponible a preu de cost a:
 
@@ -38,7 +32,7 @@ La descàrrega del llibre és gratuïta, i el llibre en paper està disponible a
 
 ---
 
-## 📂 Estructura del repositori
+## � Bases de Dades 360°
 
 ```
 basesdedades360/
